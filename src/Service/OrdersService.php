@@ -67,10 +67,19 @@ class OrdersService
 
     /**
      * @param string $email
+     * @param bool $returnable
+     * @return Courier|null
      */
-    public function findCourier(string $email): void
+    public function findCourier(string $email, bool $check_if_exists = false): ?bool
     {
         $this->courier = $this->courierService->findCourierByEmail($email);
+        if($check_if_exists){
+            if ($this->courier){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 
     public function assignOrder(int $order_id): ?Order

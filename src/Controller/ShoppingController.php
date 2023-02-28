@@ -12,18 +12,20 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/shopping')]
 class ShoppingController extends AbstractController
 {
-    protected $content;
+    private $content;
 
     #[Route('/price', name: 'calcShippingPrice')]
     public function calcShippingPrice(LocationsService $locationsService, Request $request): JsonResponse
     {
         $this->content = $request->getContent();
         $this->content = json_decode($this->content);
+        $expected_parameters = 1;
+        if(count((array) $this->content) < $expected_parameters){
+            throw new \RuntimeException('Please complete all fields ');
+        }
         $location_id = (int)$this->content->location_id;
         $order_price = (float)$this->content->order_price;
-        if(!$location_id){
-            throw new \RuntimeException('You need to chose city');
-        }
+
         return $this->json(['shipping_price' => $locationsService->calcOrderShipping($location_id, $order_price)]);
     }
 

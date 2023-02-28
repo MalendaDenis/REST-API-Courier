@@ -16,10 +16,10 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 #[Route('/API/shipping')]
 class ShippingController extends AbstractController
 {
-    protected $jwtManager;
-    protected $tokenStorageInterface;
-    protected $decodedJwtToken;
-    protected $content;
+    private $jwtManager;
+    private $tokenStorageInterface;
+    private $decodedJwtToken;
+    private $content;
 
     public function __construct(TokenStorageInterface $tokenStorageInterface, JWTTokenManagerInterface $jwtManager)
     {
