@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "4f25cee2-0567-418a-9de6-56254d853b4d",
+		"name": "rest_api_requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"sss@ssss.com\",\"name\":\"ssssss Sined\", \"location\":\"1\", \"plainPassword\":\"123123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/login_check",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"denis@denis.com\",\"password\":\"123123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/login_check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/shopping/price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"location_id\":\"1\",\"order_price\":\"500\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shopping/price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping",
+						"price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/shopping/order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"location\":\"1\",\r\n\"order_price\":\"1000\",\r\n\"customer_name\":\"Olga Aglo\",\r\n\"phone\":\"+37368686868\",\r\n\"address\":\"str. Cuza Voda 22/11 ap.11\",\r\n\"secret_word\":\"secret\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shopping/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/API/shipping/orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/API/shipping/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"API",
+						"shipping",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/shipping/started",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"order\":\"1\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shipping/started",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shipping",
+						"started"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/shipping/delivered",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"order\":\"1\", \"secret_word\":\"secret\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shipping/delivered",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shipping",
+						"delivered"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
