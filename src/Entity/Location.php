@@ -60,6 +60,14 @@ class Location
         return $this->shippingCost;
     }
 
+    public function setShippingCost(float $shippingCost): self
+    {
+        $this->shippingCost = $shippingCost;
+
+        return $this;
+    }
+
+
     /**
      * @return Collection<int, Order>
      */
