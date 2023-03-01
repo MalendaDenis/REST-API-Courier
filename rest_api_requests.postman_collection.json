@@ -60,7 +60,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost/shopping/price",
+			"name": "http://localhost/API/shopping/price",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -87,12 +87,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost/shopping/price",
+					"raw": "http://localhost/API/shopping/price",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
+						"API",
 						"shopping",
 						"price"
 					]
@@ -101,7 +102,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost/shopping/order",
+			"name": "http://localhost/API/shopping/order",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -181,7 +182,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost/shipping/started",
+			"name": "http://localhost/API/shipping/started",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -205,12 +206,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost/shipping/started",
+					"raw": "http://localhost/API/shipping/started",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
+						"API",
 						"shipping",
 						"started"
 					]
@@ -219,7 +221,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost/shipping/delivered",
+			"name": "http://localhost/API/shipping/delivered",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -243,12 +245,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost/shipping/delivered",
+					"raw": "http://localhost/API/shipping/delivered",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
+						"API",
 						"shipping",
 						"delivered"
 					]
