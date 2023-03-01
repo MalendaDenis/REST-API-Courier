@@ -26,4 +26,36 @@ All requests send (if that is needed) data in json format add response come to i
         password    : 123123
     If your acc pass log in , you will got status 200 and your personal token for next 8 hours, use it for reques: e,f,g.
 
-    c) 
+    c) http://localhost/API/shopping/price This request simulates the calculation of the cost of delivery for some order in a location served by a courier service.
+    data send:
+        location_id : 1
+        order_price : 1000  (if order_price >= 1000 then shipping cost = 0, if order_price < 1000 then shipping cost = cost which is specified for chosen location)
+    If all is right you will got price for shipping.
+
+    d) http://localhost/API/shopping/order That request is used by byer to create a order for delivery
+    data send:
+        location      : 1
+        order_price   : 1000
+        customer_name : Olga Aglo
+        phone         : 37368686868
+        address       : str. Cuza Voda 22/11 ap.11
+        secret_word   : secret
+    If all is right, this worder will be created and now couriers from the same location will see it.
+    
+    e) http://localhost/API/shipping/orders That request is used by logined couriers
+        data send:
+            In section Authorization choose type "Bearer Token", and in input field "Token" introduse your token which you got using http://localhost/login_check request.
+       If you are logined , response will consist from orders which are ready for shipping.
+       
+    f) http://localhost/API/shipping/started Using this request you assign choosed order on your courier account and got all needed for shipping information. Also don't forgot about introducing your Token.
+    data send:
+        order        : 1
+    If indicated order is ready for shipping and it is assigned on you then response will consist from all needed information.
+    
+    g) http://localhost/API/shipping/delivered This request is used when the courier delivered the order and it needs to be closed. He need to ask buyer secret word to introduce it in his APP and if this word is right the order will come closed.
+    data send:
+        order        : 1
+        secret_word  : secret
+
+
+    That's it. Now you know how this project works!
